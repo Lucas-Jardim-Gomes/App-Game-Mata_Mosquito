@@ -1,48 +1,53 @@
-setInterval(function() {
+setInterval(function () {
     posicaoRandomica()
 }, 1000)
 
-function posicaoRandomica(){
-var altura = 0;
-var largura = 0;
+function posicaoRandomica() {
+
+
+//remover o mosquito anterior (caso exista)
+
+    var altura = 0;
+    var largura = 0;
 
 
 
-function ajustaTamanhoTelaJogo() {
-    altura = window.innerHeight;
-    largura = window.innerWidth;
+    function ajustaTamanhoTelaJogo() {
+        altura = window.innerHeight;
+        largura = window.innerWidth;
 
-    console.log(largura, altura);
-}
+        console.log(largura, altura);
+    }
 
-ajustaTamanhoTelaJogo();
-
-
-var posicaoX = Math.floor(Math.random() * largura) - 90;
-var posicaoY = Math.floor(Math.random() * altura) - 90; 
-
-posicaoX = posicaoX < 0 ? 0 : posicaoX;
-posicaoY = posicaoY < 0 ? 0 : posicaoY;
-
-console.log(posicaoX, posicaoY);
+    ajustaTamanhoTelaJogo();
 
 
-//criar o elemento HTML
-var mosquito = document.createElement('img');
-mosquito.src = 'imagens/mosquito.png';
-mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio();
-mosquito.style.left = posicaoX + 'px';
-mosquito.style.top = posicaoY + 'px';
-mosquito.style.position = 'absolute';
+    var posicaoX = Math.floor(Math.random() * largura) - 90;
+    var posicaoY = Math.floor(Math.random() * altura) - 90;
 
-document.body.appendChild(mosquito);
+    posicaoX = posicaoX < 0 ? 0 : posicaoX;
+    posicaoY = posicaoY < 0 ? 0 : posicaoY;
+
+    console.log(posicaoX, posicaoY);
+
+
+    //criar o elemento HTML
+    var mosquito = document.createElement('img');
+    mosquito.src = 'imagens/mosquito.png';
+    mosquito.className = tamanhoAleatorio() + ' ' + ladoAleatorio();
+    mosquito.style.left = posicaoX + 'px';
+    mosquito.style.top = posicaoY + 'px';
+    mosquito.style.position = 'absolute';
+    mosquito.id = 'mosquito'
+
+    document.body.appendChild(mosquito);
 
 }
 
 function tamanhoAleatorio() {
     var classe = Math.floor(Math.random() * 3);
 
-    switch(classe) {
+    switch (classe) {
         case 0:
             return 'mosquito1'
         case 1:
@@ -55,7 +60,7 @@ function tamanhoAleatorio() {
 function ladoAleatorio() {
     var classe = Math.floor(Math.random() * 2);
 
-    switch(classe) {
+    switch (classe) {
         case 0:
             return 'ladoA'
         case 1:
