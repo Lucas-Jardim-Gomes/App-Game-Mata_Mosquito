@@ -1,5 +1,5 @@
 var vidas = 1
-var tempo = 10
+var tempo = 30
 
 
 var criaMosquitoTempo = 1700
@@ -74,8 +74,8 @@ function posicaoRandomica() {
     ajustaTamanhoTelaJogo();
 
 
-    var posicaoX = Math.floor(Math.random() * largura) - 130;
-    var posicaoY = Math.floor(Math.random() * altura) - 130;
+    var posicaoX = Math.floor(Math.random() * largura) - 110;
+    var posicaoY = Math.floor(Math.random() * altura) - 110;
 
     posicaoX = posicaoX < 0 ? 0 : posicaoX;
     posicaoY = posicaoY < 0 ? 0 : posicaoY;
