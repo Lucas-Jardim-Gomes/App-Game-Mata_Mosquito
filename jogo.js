@@ -7,20 +7,20 @@ setInterval(function () {
 function posicaoRandomica() {
 
 
-//remover o mosquito anterior (caso exista)
-     if(document.getElementById('mosquito')) {
+    //remover o mosquito anterior (caso exista)
+    if (document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove()
 
         //selecionando os corações e substituir o valor
-        if(vidas > 3) {
-            alert('Interromper o jogo. Game Over')
+        if (vidas > 3) {
+            window.location.href = 'fim-de-jogo.html'
         } else {
-        document.getElementById('v' + vidas).src='imagens/coracao_vazio.png'
+            document.getElementById('v' + vidas).src = 'imagens/coracao_vazio.png'
 
-        vidas++
+            vidas++
         }
-     }
-   
+    }
+
 
 
 
@@ -56,7 +56,7 @@ function posicaoRandomica() {
     mosquito.style.top = posicaoY + 'px';
     mosquito.style.position = 'absolute';
     mosquito.id = 'mosquito'
-    mosquito.onclick = function() {
+    mosquito.onclick = function () {
         this.remove()
     }
 
