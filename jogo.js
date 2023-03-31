@@ -6,19 +6,19 @@ var criaMosquitoTempo = 1700
 
 
 var nivel = window.location.search
-nivel =nivel.replace('?', '')
+nivel = nivel.replace('?', '')
 
-if(nivel === 'normal'){
-    //1700
-    var criaMosquitoTempo = 1700
+if (nivel === 'normal') {
+    // tempo 1500
+    var criaMosquitoTempo = 1500
 
-} else if(nivel === 'dificil'){
-    //1400
-    var criaMosquitoTempo = 1400
+} else if (nivel === 'dificil') {
+    //tempo 1000
+    var criaMosquitoTempo = 1000
 
-} else if(nivel === 'mior'){
-    //900
-    var criaMosquitoTempo = 900
+} else if (nivel === 'mior') {
+    //tempo 500
+    var criaMosquitoTempo = 500
 
 }
 
@@ -26,18 +26,18 @@ var criaMosquito = setInterval(function () {
     posicaoRandomica()
 }, criaMosquitoTempo)
 
-var cronometro = setInterval( function (){
+var cronometro = setInterval(function () {
 
     tempo -= 1
 
-    if(tempo < 0){
+    if (tempo < 0) {
         clearInterval(cronometro)
         clearInterval(criaMosquito)
         window.location.href = 'vitoria.html'
-    } else{
-    document.getElementById('cronometro').innerHTML = tempo
+    } else {
+        document.getElementById('cronometro').innerHTML = tempo
     }
-},1000)
+}, 1000)
 
 function posicaoRandomica() {
 
@@ -58,10 +58,8 @@ function posicaoRandomica() {
 
 
 
-
     var altura = 0;
     var largura = 0;
-
 
 
     function ajustaTamanhoTelaJogo() {
