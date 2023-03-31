@@ -1,15 +1,21 @@
 var vidas = 1
 var tempo = 10
 
-setInterval(function () {
+var criaMosquito = setInterval(function () {
     posicaoRandomica()
 }, 1500)
 
 var cronometro = setInterval( function (){
 
     tempo -= 1
+
+    if(tempo < 0){
+        clearInterval(cronometro)
+        clearInterval(criaMosquito)
+        window.location.href = 'vitoria.html'
+    } else{
     document.getElementById('cronometro').innerHTML = tempo
-    
+    }
 },1000)
 
 function posicaoRandomica() {
