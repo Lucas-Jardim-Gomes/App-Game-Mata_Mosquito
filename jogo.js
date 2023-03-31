@@ -1,9 +1,30 @@
 var vidas = 1
 var tempo = 10
 
+
+var criaMosquitoTempo = 1700
+
+
+var nivel = window.location.search
+nivel =nivel.replace('?', '')
+
+if(nivel === 'normal'){
+    //1700
+    var criaMosquitoTempo = 1700
+
+} else if(nivel === 'dificil'){
+    //1400
+    var criaMosquitoTempo = 1400
+
+} else if(nivel === 'mior'){
+    //900
+    var criaMosquitoTempo = 900
+
+}
+
 var criaMosquito = setInterval(function () {
     posicaoRandomica()
-}, 1500)
+}, criaMosquitoTempo)
 
 var cronometro = setInterval( function (){
 
