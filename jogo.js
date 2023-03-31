@@ -1,6 +1,8 @@
+var vidas = 1
+
 setInterval(function () {
     posicaoRandomica()
-}, 1000)
+}, 1200)
 
 function posicaoRandomica() {
 
@@ -8,6 +10,15 @@ function posicaoRandomica() {
 //remover o mosquito anterior (caso exista)
      if(document.getElementById('mosquito')) {
         document.getElementById('mosquito').remove()
+
+        //selecionando os corações e substituir o valor
+        if(vidas > 3) {
+            alert('Interromper o jogo. Game Over')
+        } else {
+        document.getElementById('v' + vidas).src='imagens/coracao_vazio.png'
+
+        vidas++
+        }
      }
    
 
@@ -28,8 +39,8 @@ function posicaoRandomica() {
     ajustaTamanhoTelaJogo();
 
 
-    var posicaoX = Math.floor(Math.random() * largura) - 90;
-    var posicaoY = Math.floor(Math.random() * altura) - 90;
+    var posicaoX = Math.floor(Math.random() * largura) - 130;
+    var posicaoY = Math.floor(Math.random() * altura) - 130;
 
     posicaoX = posicaoX < 0 ? 0 : posicaoX;
     posicaoY = posicaoY < 0 ? 0 : posicaoY;
@@ -45,6 +56,9 @@ function posicaoRandomica() {
     mosquito.style.top = posicaoY + 'px';
     mosquito.style.position = 'absolute';
     mosquito.id = 'mosquito'
+    mosquito.onclick = function() {
+        this.remove()
+    }
 
     document.body.appendChild(mosquito);
 
