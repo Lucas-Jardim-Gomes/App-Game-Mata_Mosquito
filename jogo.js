@@ -2,7 +2,7 @@ var vidas = 1
 
 setInterval(function () {
     posicaoRandomica()
-}, 1200)
+}, 2000)
 
 function posicaoRandomica() {
 
