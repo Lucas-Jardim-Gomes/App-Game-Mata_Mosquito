@@ -1,8 +1,16 @@
 var vidas = 1
+var tempo = 10
 
 setInterval(function () {
     posicaoRandomica()
-}, 2000)
+}, 1500)
+
+var cronometro = setInterval( function (){
+
+    tempo -= 1
+    document.getElementById('cronometro').innerHTML = tempo
+    
+},1000)
 
 function posicaoRandomica() {
 
